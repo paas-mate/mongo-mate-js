@@ -1,0 +1,13 @@
+# Project exclude paths
+**.log
+
+# IDE
+.idea/**
+**.iml
+.vscode/**
+
+# file system
+.DS_Store
+
+# js
+node_modules
