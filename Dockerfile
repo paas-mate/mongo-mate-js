@@ -1,16 +1,14 @@
 FROM ttbb/mongo:nake
 
-ENV MONGO_HOME /opt/sh/mongo
+RUN apt-get install -y --no-install-recommends nodejs && \
+    apt-get clean all
 
-RUN dnf install -y nodejs && \
-    dnf clean all
+COPY . /opt/mongo/mate
 
-COPY . /opt/sh/mongo/mate
-
-WORKDIR /opt/sh/mongo/mate
+WORKDIR /opt/mongo/mate
 
 RUN npm install
 
-WORKDIR /opt/sh/mongo
+WORKDIR /opt/mongo
 
-CMD ["/usr/bin/dumb-init", "bash", "-vx", "/opt/sh/mongo/mate/scripts/start.sh"]
+CMD ["/usr/bin/dumb-init", "bash", "-vx", "/opt/mongo/mate/scripts/start.sh"]
