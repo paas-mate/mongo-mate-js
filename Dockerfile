@@ -1,13 +1,6 @@
 FROM ttbb/mongo:nake
 
-RUN apt-get install -y --no-install-recommends nodejs npm && \
-    apt-get clean all
-
 COPY . /opt/mongo/mate
-
-WORKDIR /opt/mongo/mate
-
-RUN npm install
 
 WORKDIR /opt/mongo
 
