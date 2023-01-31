@@ -1,4 +1,5 @@
 #!/bin/bash
 
-nohup node $MONGO_HOME/mate/app/server.js >mongo_mate.stdout.log 2>mongo_mate.stderr.log
+DIR="$( cd "$( dirname "$0"  )" && pwd  )"
+bash -x $DIR/start-daemon.sh
 tail -f /dev/null
