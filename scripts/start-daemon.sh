@@ -26,5 +26,8 @@ case ${DEPLOY_TYPE} in
   echo "start mongo shard."
   bash -xv ${START_SHARD_SCRIPT}
   ;;
+*)
+  echo "DEPLOY_TYPE is not set or not recognized. Using stand-alone mode by default."
+  bash -xv ${START_STANDALONE_SCRIPT}
+  ;;
 esac
-
